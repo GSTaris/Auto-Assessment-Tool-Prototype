@@ -1,0 +1,41 @@
+{% extends "layout.html" %} 
+{% block title %}Login{% endblock %} 
+{% block content %}
+  <div class="col-6 m-auto" style="margin-top:100px !important">
+    <form method="POST" action="/login">
+      <h3 align="center">Login</h3>
+      <div class="form-group">
+        <br>
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          class="form-control"
+          placeholder="Enter Username"
+          required
+        />
+        <br>
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="form-control"
+          placeholder="Enter Password"
+          required
+        />
+        <br>
+        <input type="radio" id="role" name="role" value="teacher" checked> Teaching Staff</input>
+        &nbsp; &nbsp; &nbsp;
+        <input type="radio" id="role" name="role" value="student" > Student</input>
+        <br/>
+        <br>
+        <div align="center">
+          <button class="btn btn-primary col-4" type="submit">Login</button>
+        </div>
+      </div>
+    </form>
+  </div>
+    {% endblock %}
+    

@@ -1,0 +1,200 @@
+  /*Reference starts here - Adapted from Bootstrap CSS (Bootstrap [no date])*/
+  body {
+    background:  #a0dcff;
+    color: #333333;
+    margin-top: 5rem;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color:black;
+  }
+
+#top_navig_bar {
+    background-color:hsl(239, 100%, 73%);
+  }
+
+.navbar-brand {
+   color:#ffffff;
+  }
+
+  .navbar-brand:hover {
+  color:#1014f8;
+  }
+  
+  .site-header .navbar-nav .nav-link {
+    color: #ffffff;
+  }
+  
+  .site-header .navbar-nav .nav-link:hover {
+    color: #1014f8;
+  }
+  
+  .site-header .navbar-nav .nav-link.active {
+    font-weight: 500;
+  }
+
+  #footer {
+  height: 4rem;
+  background-color: hsl(239, 100%, 73%);
+  font-weight: 500;
+  }
+
+  #footer-title {
+    color: white;
+    font-family: Arial;
+  }
+.Functions{
+  width: 100%;
+  height: 100px;
+}
+.Functions p{
+  text-align: center;
+  font-size: larger;
+  color: #1014f8;
+}
+.Functions .Functionbuttons{
+  margin-left: 30%;
+}
+.Functions a{
+  margin-left: 80px;
+}
+.AssessmentlList h2{
+  margin-left: 20px;
+  padding-bottom: 0px;
+}
+.AssessmentlInfo{
+  color: red;
+  margin-left: 40px;
+  text-decoration: underline;
+}
+.AssessmentTitle{
+  display: inline-block;
+  margin-left: 70px;
+  font-size: large;
+  font-weight: bold;
+}
+.AssessmentDifficulty{
+  display: inline-block;
+  margin-left: 280px;
+  font-size: large;
+  font-weight: bold;
+}
+.AssessmentStatus{
+  display: inline-block;
+  margin-left: 150px;
+  font-size: large;
+  font-weight: bold;
+}
+.AssessmentDuetime{
+  display: inline-block;
+  margin-left: 150px;
+  font-size: large;
+  font-weight: bold;
+}
+.AssessmentTimeLimit{
+  display: inline-block;
+  margin-left: 150px;
+  font-size: large;
+  font-weight: bold;
+}
+.assessmentLink{
+  margin-left: 30px;
+  width: 200px;
+  display: inline-block;
+}
+.difficultyAssessment{
+  color:teal  ;
+  width: 100px;
+  margin-left: 150px;
+  display: inline-block;
+}
+.completedAssessemnt{
+  color:green;
+  width: 100px;
+  margin-left: 100px;
+  display: inline-block;
+}
+.uncompletedAssessemnt{
+  color: red;
+  width: 100px;
+  margin-left: 100px;
+  display: inline-block;
+}
+.duetimeAssessment{
+  width: 200px;
+  margin-left: 100px;
+  display: inline-block;
+}
+.timelimitAssessment{
+  width: 100px;
+  margin-left: 40px;
+  display: inline-block;
+}
+
+.assessmentQuestion{
+  font-size: large;
+  margin-left: 50px;
+}
+.assessmentOptions{
+  margin-left: 40px;
+}
+.assessmentOption{
+  display:block;
+  margin-top: 10px;
+}
+.HeaderOfQuestionNumber{
+  display: inline-block;
+  margin-left: 10px;
+  font-weight: bold;
+}
+.HeaderOfQuestion{
+  display: inline-block;
+  margin-left: 70px;
+  font-weight: bold;
+}
+.HeaderOfCorrectAnswer{
+  display: inline-block;
+  margin-left: 300px;
+  font-weight: bold;
+}
+.HeaderOfQuestionExplanation{
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 100px;
+}
+
+.QuestionNumber{
+  display: inline-block;
+  margin-left: 60px;
+}
+.Question{
+  display: inline-block;
+  width: 310px;
+  margin-left: 150px;
+  word-break: normal;
+}
+.CorrectAnswer{
+  display: inline-block;
+  margin-left: 80px;
+  width: 50px;
+  text-align: center;
+}
+.QuestionExplanation{
+  display: inline-block;
+  margin-left: 120px;
+  word-break: normal;
+  width: 400px;
+}
+
+#questionform .form-group {
+  margin-bottom: 15px !important;
+}
+
+.squestion {
+  height: 30px !important;
+  padding-left: 30px !important;
+}
+
+.card {
+  background-color: #ffffff2e !important;
+}

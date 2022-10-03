@@ -1,0 +1,52 @@
+{% extends "layout.html" %} 
+{% block title %}New Accessments{% endblock %} 
+{% block content %}
+<div class="row">
+	<div class="col-10 m-auto">
+		<h4 class="text-center">Title: {{history.title }} </h4>
+		<form>
+			{% for question in questions %}
+			<p style="font-weight: bold; margin-bottom: 4px;">{{ loop.index }}. {{ question.question | safe }}</p>
+			<div class="row clearfix" >
+				<div class="row clearfix squestion">
+					<div class="col-md-6 column">
+						<input disabled type="radio" name="reply_{{loop.index}}" id="" value="A"> A. {{ question.option1 }}
+					</div>
+					<div class="col-md-6 column">
+						<input disabled type="radio" name="reply_{{loop.index}}" id="" value="B"> B. {{ question.option1 }}
+					</div>
+				</div>
+				<div class="row clearfix squestion">
+					<div class="col-md-6 column">
+						<input disabled type="radio" name="reply_{{loop.index}}" id="" value="C"> C. {{ question.option1 }}
+					</div>
+					<div class="col-md-6 column">
+						<input disabled type="radio" name="reply_{{loop.index}}" id="" value="D"> D. {{ question.option1 }}
+					</div>
+				</div>
+				{% if question.answer == replys[loop.index0] %}
+					<div class="alert alert-success">
+						<strong>Answer: {{replys[loop.index0]}}, Congrats ! </strong> --  Notes: {{question.explain}}
+					</div>
+				{% else %}
+					<div class="alert alert-danger">
+						<strong>Answer: {{replys[loop.index0]}}, Correct: {{question.answer}} ! </strong>  -- Notes: {{question.explain}}
+					</div>
+				{% endif %}
+
+			</div>
+			<hr style="margin-top: 5px; margin-bottom: 5px;">
+			{% endfor %}
+			<br>
+			</form>
+			<div class="text-center">
+			<a class="col-4 btn btn-primary" href="/historys"> Back to MyRecords </a>
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+	</div>
+</div>
+{% endblock %}
+    

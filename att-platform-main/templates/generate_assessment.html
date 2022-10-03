@@ -1,0 +1,97 @@
+{% extends "layout.html" %} 
+{% block title %}New Accessments{% endblock %} 
+{% block content %}
+<div class="row">
+	<div class="col-10 m-auto">
+		{% if questions %}
+			{% for question in questions %}
+			<p style="font-weight: bold; margin-bottom: 4px;">{{ loop.index }}. {{ question.question | safe }}</p>
+			<div class="row clearfix" >
+				<div class="row clearfix squestion">
+					<div class="col-md-6 column">
+						<p>A. {{ question.option1 }} </p>
+					</div>
+					<div class="col-md-6 column">
+						<p>B. {{ question.option2 }} </p>
+					</div>
+				</div>
+				<div class="row clearfix squestion">
+					<div class="col-md-6 column">
+						<p>C. {{ question.option3 }} </p>
+					</div>
+					<div class="col-md-6 column">
+						<p>D. {{ question.option4 }} </p>
+					</div>
+				</div>
+			</div>
+			<hr style="margin-top: 5px; margin-bottom: 5px;">
+			{% endfor %}
+		{% else %}
+		<p>No result return!</p>
+		{% endif %}
+		<br>
+		<h3 class="text-center"> Confirm and submit assessment </h3>
+		<br>
+		<form class="form-group" action="{{url_for('generate')}}" method="post" id="questionform">
+			<div class="form-group">
+				<div class="row">
+					<div class="col-2">
+						<label for="">Title:</label>
+					</div>
+					<div class="col-10">
+					<input class="form-control" type="text" name="title" placeholder="Please input the tilte " required>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-2">
+						<label for="">Category:</label>
+					</div>
+					<div class="col-10">
+					<!-- <input class="form-control" type="text" name="answer" placeholder="Please input the answer " required> -->
+						<div class="form-group">
+							<select class="form-control" name="category" id="" required>
+								<option value=""> Please choose the category</option>
+								<option value="formative"> Formative Accessment (multiple time)</option>
+								<option value="summative"> Summative Accessment (only one time)</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-2">
+						<label for="">Duration Time:</label>
+					</div>
+					<div class="col-10">
+					<input class="form-control" type="number" name="duration_time" placeholder="Please input the duration time " required>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-2">
+						<label for="">Due Date:</label>
+					</div>
+					<div class="col-10">
+					<input class="form-control" type="date" name="due_time" placeholder="Please input the due date " required>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<input type="text" class="d-none" name="question_ids" value="{{ str_question_ids }}">
+			</div>
+			<div class="text-center">
+				<button class="btn btn-primary col-3" type="submit">Submit</button>
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+		</form>
+	</div>
+</div>
+{% endblock %}
+    

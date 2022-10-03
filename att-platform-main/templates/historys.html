@@ -1,0 +1,55 @@
+{% extends "layout.html" %} 
+{% block title %}Historys{% endblock %} 
+{% block content %}
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-header">
+				<h5 class="card-title text-center">My Examination Records</h5>
+			</div>
+			<div class="card-body">
+				{% if historys %}
+				<table class="table table-striped table-bordered table-inverse tbresult" cellpadding="0" cellspacing="0">
+					<thead class="thead-inverse">
+						<tr class="text-center">
+							<th>ID</th>
+							<th>Title</th>
+							<th>Category</th>
+							<th>Times</th>
+							<th>Score</th>
+							<th>Name </th>
+							<th>Exam Time</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+							{% for item in historys %}
+							<tr class="text-center">
+								<td>{{ loop.index }}</td>
+								<td>{{ item.title }}</td>
+								<td>{{ item.category }}</td>
+								<td>{{ item.times }}</td>
+								<td>{{ item.score }}</td>
+								<td>{{ item.student_name }}</td>
+								<td>{{ item.create_dt.strftime("%Y-%m-%d %H:%M")}}</td>
+								<td>
+									<a class="btn btn-sm btn-primary" href="/showdetail/{{item.id}}" role="button"> Detail </a> 
+									{% if item.category == "formative" and session.get('role') == 'student' %}
+										<a class="btn btn-sm btn-danger" href="/examine/{{item.assessment_id}}" role="button"> Exam Again </a> 
+									{% endif %}
+								</td>
+							</tr>
+							{% endfor %}
+					</tbody>
+				</table>
+
+				{% else %}
+				<p>No result return!</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+    
